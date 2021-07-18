@@ -66,21 +66,22 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
+    int x,y;
+        cin>>x>>y;
+        int arr[y];
+        f(i,0,y){
             cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
+        }
+        sort(arr,arr+y);
+        int best=INT_MAX;
+        for(int i=0;i<=y-x;i++){
+            best=min(best,(arr[i+x-1]-arr[i]));
 
         }
-        cout<<x-b-1+a-(b<a)<<endl;
-
-    
+        cout<<best<<endl;
 }
 signed main()
 {

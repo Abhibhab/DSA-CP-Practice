@@ -59,27 +59,18 @@ int fact(int n)
     }
     return res % MOD;
 }
-bool comp(pair<string, int> a, pair<string, int> b)
+bool comp(pair<string, int> a, pair<string, int> b)s
 {
     if (a.second != b.second)
         return a.second > b.second;
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
-
-        }
-        cout<<x-b-1+a-(b<a)<<endl;
-
+    int x;cin>>x;
+    cout<<fact(x)<<endl;
     
 }
 signed main()
@@ -89,7 +80,7 @@ signed main()
     cout.tie(NULL);
 
     int tc = 1;
-    //cin >> tc;
+    cin >> tc;
     while (tc--)
     {
         solve();

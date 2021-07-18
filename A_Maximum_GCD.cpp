@@ -66,20 +66,42 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+bool isPrime(int n)
+{
+    // Corner cases
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+  
+    // This is checked so that we can skip
+    // middle five numbers in below loop
+    if (n % 2 == 0 || n % 3 == 0)
+        return false;
+  
+    for (int i = 5; i * i <= n; i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+  
+    return true;
+}
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
+    int x;cin>>x;
+    if(x<=3){
+        cout<<1;
+    }else{
+        if(isPrime(x)){
+            cout<<((x-1)/2)<<endl;
 
+        }else if(x%2!=0){
+            cout<<(x-1)/2;
+        }else{
+            cout<<x/2;
         }
-        cout<<x-b-1+a-(b<a)<<endl;
 
+    }
+    cout<<endl;
     
 }
 signed main()
@@ -89,7 +111,7 @@ signed main()
     cout.tie(NULL);
 
     int tc = 1;
-    //cin >> tc;
+    cin >> tc;
     while (tc--)
     {
         solve();

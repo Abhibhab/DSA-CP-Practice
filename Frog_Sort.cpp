@@ -66,20 +66,38 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
-
+    int x;
+        cin>>x; 
+        int w[x],l[x];
+        f(i,0,x){
+            cin>>w[i];
         }
-        cout<<x-b-1+a-(b<a)<<endl;
+        
+        f(i,0,x){
+            cin>>l[i];
+        }
+        int ans=0;
+        vector <pair<int,int>> wp(x);
+        for(int i=0;i<x;i++){
+            wp[i]={w[i],i};
+        }
+        sort(wp.begin(),wp.end());
+        int last_pos=wp[0].second;
+        for(int i=1;i<x;i++){
+            int current_pos=wp[i].second;
+            int index=wp[i].second;
+            while(current_pos<=last_pos){
+                current_pos+=l[index];
+                ans++;
+            }
+            last_pos=current_pos;
+        }
+        cout<<ans<<endl;
 
+        
     
 }
 signed main()
@@ -89,7 +107,7 @@ signed main()
     cout.tie(NULL);
 
     int tc = 1;
-    //cin >> tc;
+    cin >> tc;
     while (tc--)
     {
         solve();

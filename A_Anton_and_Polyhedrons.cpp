@@ -66,19 +66,42 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+int ans=0;
+
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
+    string s20="Icosahedron";
+    string s6="Cube";
+    string s8="Octahedron";
+    string s12="Dodecahedron";
+    string s4="Tetrahedron";
+    int x;
+    cin>>x;
+    string s;
+    
+    while(x--){
+        cin>>s;
+        if(s==s4){
+            ans=ans+4;
+
+        }else if(s==s20){
+            ans=ans+20;
+
+        }else if(s==s6){
+            ans=ans+6;
+
+        }else if(s==s12){
+            ans=ans+12;
+
+        }else{
+            ans=ans+8;
 
         }
-        cout<<x-b-1+a-(b<a)<<endl;
+
+
+    }
+    cout<<ans<<endl;
+
 
     
 }

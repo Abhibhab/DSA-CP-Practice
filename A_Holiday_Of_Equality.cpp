@@ -66,21 +66,26 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+int sum=0;
 void solve()
 {
-   
+    int x;
         cin>>x;
         int arr[x];
-        f(i,0,x){\
+        f(i,0,x){
             cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
-
         }
-        cout<<x-b-1+a-(b<a)<<endl;
+        int moni=*max_element(arr,arr+x);
+        
+        
+        f(i,0,x){
+            if(arr[i]<moni){
+                sum+=moni-arr[i];
 
-    
+            }
+        }
+        cout<<sum<<endl;
+        
 }
 signed main()
 {

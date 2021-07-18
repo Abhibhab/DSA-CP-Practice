@@ -66,21 +66,30 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+ int per_prob=5;
+ int counter=1;
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
-
-        }
-        cout<<x-b-1+a-(b<a)<<endl;
-
     
+    int x,y;cin>>x>>y;
+    int time=240-y;
+    int count=0;
+    
+   
+
+    while(time>0 && time>=per_prob*counter){
+        
+
+        
+        time=time-(per_prob*counter);
+        count++;
+        counter++;
+        
+        
+
+
+    }
+    cout<<((count>x)?x:count);
 }
 signed main()
 {

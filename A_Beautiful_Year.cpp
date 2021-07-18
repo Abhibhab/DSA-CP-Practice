@@ -66,20 +66,29 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+bool is_dif (int x){
+    set<int> sol;
+    while(x>0){
+        sol.insert(x%10);
+        x=x/10;
+    }
+    if(sol.size()==4){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
-
-        }
-        cout<<x-b-1+a-(b<a)<<endl;
-
+    int x;
+    cin>>x;
+    int next_year=x+1;
+    while(!is_dif(next_year)){
+        next_year++;
+    }
+    cout<<next_year;
     
 }
 signed main()
@@ -95,3 +104,4 @@ signed main()
         solve();
     }
 }
+

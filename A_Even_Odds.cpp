@@ -66,21 +66,32 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
-
-        }
-        cout<<x-b-1+a-(b<a)<<endl;
-
-    
+    long long n,k;
+  cin>>n>>k;
+  n=(n+1)/2;
+  cout<<(k<=n?k*2-1:2*(k-n));
+    /* int x,y;
+    cin>>x>>y;
+     vi even;
+     vi odd;
+     for(int i=1;i<=x;i++){
+         if(i%2==0){
+             even.PB(i);
+         }else{
+             odd.PB(i);
+         }
+     }
+     y--;
+     
+     if(y>x/2){
+         cout<<even[(y-x/2)-1];
+     }else{
+         cout<<odd[y];
+     }
+     */
 }
 signed main()
 {

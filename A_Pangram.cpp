@@ -64,23 +64,25 @@ bool comp(pair<string, int> a, pair<string, int> b)
     if (a.second != b.second)
         return a.second > b.second;
     return a.first < b.first;
-}
+}   
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
+    int x;
+    cin>>x;
+    string s;
+    cin>>s;
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    set<char> sotu;
+        for(int i=0;i<s.length();i++){
+            sotu.insert(s[i]);
 
-        }
-        cout<<x-b-1+a-(b<a)<<endl;
-
+    }
     
+    cout<<((sotu.size()==26)?"YES":"NO");
+
+
 }
 signed main()
 {

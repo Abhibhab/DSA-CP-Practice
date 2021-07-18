@@ -66,20 +66,28 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+
 void solve()
 {
-   
+    int x;
         cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
+        int k=0,lo=0;
+        
+        f(i,0,x){
+            int b;
+            cin>>b;
+            if(i%2 !=b%2){
+                if(i%2){
+                    k++;
+                }else{
+                    lo++;
 
+                }
+            }
         }
-        cout<<x-b-1+a-(b<a)<<endl;
-
+       
+        cout<<((k==lo)?k:-1);
+        cout<<endl;
     
 }
 signed main()
@@ -89,7 +97,7 @@ signed main()
     cout.tie(NULL);
 
     int tc = 1;
-    //cin >> tc;
+    cin >> tc;
     while (tc--)
     {
         solve();

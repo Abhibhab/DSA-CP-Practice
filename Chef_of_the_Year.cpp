@@ -66,19 +66,50 @@ bool comp(pair<string, int> a, pair<string, int> b)
     return a.first < b.first;
 }
 //////////////////////////////////////////////////////////////////////////////
- int x,a,b;
+
 void solve()
 {
-   
-        cin>>x;
-        int arr[x];
-        f(i,0,x){\
-            cin>>arr[i];
-            if(arr[i]>arr[a]){a=i;};
-            if(arr[i]<=arr[b]){b=i;};
+    int chefs,votes;
+    cin>>chefs>>votes;
+    map<string,string>chef_country;
+    for(int i=0;i<chefs;i++){
+        string name,country;
+        cin>>name>>country;
+        chef_country[name]=country;
+    }
+    map<string,int>chef_votes;
+    map<string,int>country_votes;
+    for(int i=0;i<votes;i++){
+        string name;
+        cin>>name;
+        chef_votes[name]++;
+        string name_country=chef_country[name];
+        chef_country[name_country]++;
 
-        }
-        cout<<x-b-1+a-(b<a)<<endl;
+    }
+    int maxi=0;
+    str ans_chef="";
+
+   for(auto it:chef_votes){
+       if(maxi<it.second){
+           maxi=it.second;
+           ans_chef=it.first;
+
+       }  
+
+   }
+   int mpxa=0;
+   str ans_country="";
+   for(auto it:country_votes){
+       if(mpxa<it.second){
+           mpxa=it.second;
+           ans_country=it.first;
+
+       }
+
+   }
+   cout<<ans_chef<<endl;
+   cout<<ans_country<<endl;
 
     
 }
