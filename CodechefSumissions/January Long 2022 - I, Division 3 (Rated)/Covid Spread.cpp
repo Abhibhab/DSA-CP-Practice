@@ -111,18 +111,34 @@ void solve() {
     int a, b;
     cin >> a >> b;
     int ans = 1;
+    if (b == 0) {
+        cout << 1 << nl;
+        return;
+    }
+    if (a == 0) {
+        cout << 0 << nl;
+        return;
+    }
 
     fr(i, 1, b + 1) {
-        if (ans >= a) {
-            cout << a << nl;
-            return;
-        }
+        // if (ans > a) {
+        //     cout << a << nl;
+        //     return;
+        // }
 
         if (i <= 10) {
             ans = ans * 2;
+            if (ans > a) {
+                cout << a << nl;
+                return;
+            }
 
         } else {
             ans = ans * 3;
+            if (ans > a) {
+                cout << a << nl;
+                return;
+            }
         }
 
     }
